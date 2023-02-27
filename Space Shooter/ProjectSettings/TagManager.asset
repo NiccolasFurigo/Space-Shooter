@@ -13,10 +13,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Inimigos
+  - Player
+  - TiroPlayer
+  - TiroInimigo
   - 
   - 
   - 

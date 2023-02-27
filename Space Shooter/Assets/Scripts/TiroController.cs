@@ -6,7 +6,8 @@ public class TiroController : MonoBehaviour
 {
     //Variáveis
     private Rigidbody2D meuRB;
-    private float velocidade = 10f;
+    [SerializeField] private float velocidade = 10f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class TiroController : MonoBehaviour
     {
         
     }
-
+    //Destruindo o tiro ao colidir com o Destruidor de tiros
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(gameObject);
