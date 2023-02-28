@@ -22,11 +22,11 @@ public class PlayerController : MonoBehaviour
         //Taking the input
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        Vector2 minhaVelocidade = new Vector2(horizontal, vertical);
+        Vector2 myVelocity= new Vector2(horizontal, vertical);
         //Limiting diagonal speed
-        minhaVelocidade.Normalize();
+        myVelocity.Normalize();
         //Passing the input to Rigidbody
-        myRB.velocity = minhaVelocidade * velocity;
+        myRB.velocity = myVelocity * velocity;
 
         //Shooting
         if (Input.GetButtonDown("Fire1"))
