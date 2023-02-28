@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class TiroController : MonoBehaviour
 {
-    //Variáveis
-    private Rigidbody2D meuRB;
-    [SerializeField] private float velocidade = 10f;
+    //Variables
+    private Rigidbody2D myRB;
+    [SerializeField] private float velocity = 10f;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Pegando meu Rigidbody
-        meuRB= GetComponent<Rigidbody2D>();
-
-        //Aplicando a velocidade para cima
-        meuRB.velocity = new Vector2(0f, velocidade);
+        //Catching the rigidbody
+        myRB = GetComponent<Rigidbody2D>();
+        //Applying speed
+        myRB.velocity = new Vector2(0f, velocity);
     }
 
     // Update is called once per frame
@@ -23,7 +22,7 @@ public class TiroController : MonoBehaviour
     {
         
     }
-    //Destruindo o tiro ao colidir com o Destruidor de tiros
+    //Destroying the shot
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(gameObject);

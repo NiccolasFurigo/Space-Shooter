@@ -4,34 +4,34 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //Variáveis
-    private Rigidbody2D meuRB;
-    private float velocidade = 5f;
-    [SerializeField] private GameObject tiro;
-    [SerializeField] private Transform posicaoTiro;
+    //Variables
+    private Rigidbody2D myRB;
+    private float velocity = 5f;
+    [SerializeField] private GameObject shot;
+    [SerializeField] private Transform shotPosition;
     // Start is called before the first frame update
     void Start()
     {
-        //Pegando o Componente Rigidbody
-        meuRB = GetComponent<Rigidbody2D>();
+        //Catching the rigidbody
+        myRB = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Pegando o Input Horizontal e Vertical
+        //Taking the input
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector2 minhaVelocidade = new Vector2(horizontal, vertical);
-        //Limitando a velocidade na diagonal
+        //Limiting diagonal speed
         minhaVelocidade.Normalize();
-        //Passando o Input para o Rigidbody
-        meuRB.velocity = minhaVelocidade * velocidade;
+        //Passing the input to Rigidbody
+        myRB.velocity = minhaVelocidade * velocity;
 
-        //Atirando
+        //Shooting
         if (Input.GetButtonDown("Fire1"))
         {
-            Instantiate(tiro, posicaoTiro.position, transform.rotation);
+            Instantiate(shot, shotPosition.position, transform.rotation);
         }
     }
 }
