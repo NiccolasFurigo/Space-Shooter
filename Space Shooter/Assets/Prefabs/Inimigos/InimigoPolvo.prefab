@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7713814071815146512}
   m_Layer: 8
-  m_Name: "Posi\xE7\xE3o do Tiro"
+  m_Name: Shot Position
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: 1698462617}
   m_Layer: 8
   m_Name: InimigoPolvo
-  m_TagString: Untagged
+  m_TagString: Enemy01
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -205,8 +205,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c0f301a1730a3a4a988a8ca32e813bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiro: {fileID: 7788329280449908652, guid: fb841a792b2e46e44ad69a7d3c577c1a, type: 3}
-  posicaoTiro: {fileID: 7713814071815146512}
+  shot: {fileID: 7788329280449908652, guid: fb841a792b2e46e44ad69a7d3c577c1a, type: 3}
+  explosion: {fileID: 3904259217435772301, guid: 1d825c8a221802c4389e6931c82c8f5f, type: 3}
+  shotPosition: {fileID: 7713814071815146512}
 --- !u!70 &1698462617
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class TiroController : MonoBehaviour
 {
     //Variables
     private Rigidbody2D myRB;
+    [SerializeField] private GameObject impact;
     [SerializeField] private float velocity = 10f;
 
     // Start is called before the first frame update
@@ -25,6 +26,16 @@ public class TiroController : MonoBehaviour
     //Destroying the shot
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Enemy01"))
+        {
+            collision.GetComponent<InimigoController>().loseLife(1);
+        }
+
+        if (collision.CompareTag("Player01"))
+        {
+            collision.GetComponent<PlayerController>().loseLife(1);
+        }
         Destroy(gameObject);
+        Instantiate(impact, transform.position, transform.rotation);
     }
 }

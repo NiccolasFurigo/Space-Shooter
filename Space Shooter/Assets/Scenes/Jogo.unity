@@ -180,16 +180,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6f42477b7b92a44486e3f9096800314, type: 3}
---- !u!4 &144996939 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1771203651, guid: d5546108f7622c340a5e95e75b1fe6dc, type: 3}
-  m_PrefabInstance: {fileID: 6513093005772379147}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &472250135 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7713814071815146512, guid: dfcc99990f4a44649aba4bed2d350691, type: 3}
-  m_PrefabInstance: {fileID: 8934646552098106914}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4960972092039724693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -254,22 +244,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1771203650, guid: d5546108f7622c340a5e95e75b1fe6dc, type: 3}
-      propertyPath: m_Name
-      value: shotPosition
-      objectReference: {fileID: 0}
     - target: {fileID: 6513093005676139888, guid: d5546108f7622c340a5e95e75b1fe6dc, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6513093005676139893, guid: d5546108f7622c340a5e95e75b1fe6dc, type: 3}
-      propertyPath: shot
-      value: 
-      objectReference: {fileID: 3057474372636974245, guid: 3205d72187b25f34dbfea70a0a4dda35, type: 3}
-    - target: {fileID: 6513093005676139893, guid: d5546108f7622c340a5e95e75b1fe6dc, type: 3}
-      propertyPath: shotPosition
-      value: 
-      objectReference: {fileID: 144996939}
     - target: {fileID: 6513093005676139895, guid: d5546108f7622c340a5e95e75b1fe6dc, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -380,18 +358,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 315645845125761953, guid: dfcc99990f4a44649aba4bed2d350691, type: 3}
-      propertyPath: m_Name
-      value: Shot Position
-      objectReference: {fileID: 0}
-    - target: {fileID: 8934646553755620788, guid: dfcc99990f4a44649aba4bed2d350691, type: 3}
-      propertyPath: shot
-      value: 
-      objectReference: {fileID: 7788329280449908652, guid: fb841a792b2e46e44ad69a7d3c577c1a, type: 3}
-    - target: {fileID: 8934646553755620788, guid: dfcc99990f4a44649aba4bed2d350691, type: 3}
-      propertyPath: shotPosition
-      value: 
-      objectReference: {fileID: 472250135}
     - target: {fileID: 8934646553755620791, guid: dfcc99990f4a44649aba4bed2d350691, type: 3}
       propertyPath: m_Name
       value: InimigoPolvo

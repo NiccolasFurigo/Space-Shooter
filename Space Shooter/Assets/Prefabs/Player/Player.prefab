@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1771203651}
   m_Layer: 9
-  m_Name: "posi\xE7\xE3oTiro"
+  m_Name: shotPosition
   m_TagString: Untagged
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: -3003024338902175851}
   m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player01
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,8 +79,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ae36c0a1e9acb4fbf0a332f4853936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiro: {fileID: 3057474372636974245, guid: 3205d72187b25f34dbfea70a0a4dda35, type: 3}
-  posicaoTiro: {fileID: 1771203651}
+  shot: {fileID: 3057474372636974245, guid: 3205d72187b25f34dbfea70a0a4dda35, type: 3}
+  explosion: {fileID: 3904259217435772301, guid: 1d825c8a221802c4389e6931c82c8f5f, type: 3}
+  shotPosition: {fileID: 1771203651}
 --- !u!50 &6513093005676139894
 Rigidbody2D:
   serializedVersion: 4

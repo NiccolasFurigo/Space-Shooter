@@ -8,9 +8,12 @@ public class InimigoController : MonoBehaviour
     private Rigidbody2D myRB;
     private float velocity = -3f;
     private float waitShot;
+    private int life = 1;
 
     [SerializeField] private GameObject shot;
+    [SerializeField] private GameObject explosion;
     [SerializeField] private Transform shotPosition;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +41,15 @@ public class InimigoController : MonoBehaviour
                 //Restarting
                 waitShot = Random.Range(1.5f, 2f);
             }
+        }
+    }
+    public void loseLife(int damage)
+    {
+        life -= damage;
+        if(life <= 0)
+        {
+            Destroy(gameObject);
+            Instantiate(explosion, transform.position, transform.rotation);
         }
     }
 }
