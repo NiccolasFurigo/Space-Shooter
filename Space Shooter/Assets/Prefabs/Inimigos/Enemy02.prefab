@@ -71,8 +71,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 361775499
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -1262753805, guid: fcb5cded4110d6043b6c0716e26a62be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -171,7 +171,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.012038708, y: -0.2257266}
@@ -191,4 +191,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: -3
   life: 1
+  shot: {fileID: 621178163139044677, guid: 145222856bb8d2f42ba5cb3da1193774, type: 3}
   explosion: {fileID: 3904259217435772301, guid: 1d825c8a221802c4389e6931c82c8f5f, type: 3}

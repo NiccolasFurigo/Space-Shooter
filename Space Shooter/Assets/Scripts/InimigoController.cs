@@ -6,9 +6,6 @@ public class InimigoController : EnemyEntity
 {
     //Variables
     private Rigidbody2D myRB;
-    private float waitShot;
-
-    [SerializeField] private GameObject shot; 
     [SerializeField] private Transform shotPosition;
     
     // Start is called before the first frame update
@@ -23,6 +20,11 @@ public class InimigoController : EnemyEntity
 
     // Update is called once per frame
     void Update()
+    {
+        Shooting();
+    }
+
+    private void Shooting()
     {
         //Checking the sprite render
         bool visible = GetComponentInChildren<SpriteRenderer>().isVisible;
@@ -40,5 +42,4 @@ public class InimigoController : EnemyEntity
             }
         }
     }
-    
 }
