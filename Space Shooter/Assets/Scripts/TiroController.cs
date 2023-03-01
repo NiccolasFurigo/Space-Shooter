@@ -26,9 +26,9 @@ public class TiroController : MonoBehaviour
     //Destroying the shot
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy01"))
+        if (collision.CompareTag("Enemy"))
         {
-            collision.GetComponent<InimigoController>().loseLife(1);
+            collision.GetComponent<EnemyEntity>().loseLife(1);
         }
 
         if (collision.CompareTag("Player01"))

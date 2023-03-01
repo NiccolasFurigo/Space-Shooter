@@ -2,16 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InimigoController : MonoBehaviour
+public class InimigoController : EnemyEntity
 {
     //Variables
     private Rigidbody2D myRB;
-    private float velocity = -3f;
     private float waitShot;
-    private int life = 1;
 
-    [SerializeField] private GameObject shot;
-    [SerializeField] private GameObject explosion;
+    [SerializeField] private GameObject shot; 
     [SerializeField] private Transform shotPosition;
     
     // Start is called before the first frame update
@@ -43,13 +40,5 @@ public class InimigoController : MonoBehaviour
             }
         }
     }
-    public void loseLife(int damage)
-    {
-        life -= damage;
-        if(life <= 0)
-        {
-            Destroy(gameObject);
-            Instantiate(explosion, transform.position, transform.rotation);
-        }
-    }
+    
 }
