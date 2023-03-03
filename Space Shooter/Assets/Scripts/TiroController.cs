@@ -14,8 +14,7 @@ public class TiroController : MonoBehaviour
     {
         //Catching the rigidbody
         myRB = GetComponent<Rigidbody2D>();
-        //Applying speed
-        myRB.velocity = new Vector2(0f, velocity);
+
     }
 
     // Update is called once per frame

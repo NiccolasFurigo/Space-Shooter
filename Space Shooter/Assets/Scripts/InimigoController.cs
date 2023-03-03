@@ -6,6 +6,7 @@ public class InimigoController : EnemyEntity
 {
     //Variables
     private Rigidbody2D myRB;
+    private float shotSpeed = -5f;
     [SerializeField] private Transform shotPosition;
     
     // Start is called before the first frame update
@@ -36,7 +37,8 @@ public class InimigoController : EnemyEntity
             if (waitShot <= 0)
             {
                 //Creating the shot
-                Instantiate(shot, shotPosition.position, transform.rotation);
+                var myShot = Instantiate(shot, shotPosition.position, transform.rotation);
+                myShot.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, shotSpeed);
                 //Restarting
                 waitShot = Random.Range(1.5f, 2f);
             }

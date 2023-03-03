@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyNaveController : EnemyEntity
 {
     private Rigidbody2D myRB;
+    [SerializeField] private Transform shotPosition;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,9 +30,9 @@ public class EnemyNaveController : EnemyEntity
             if (waitShot <= 0)
             {
                 //Creating the shot
-                Instantiate(shot, transform.position, transform.rotation);
+                Instantiate(shot, shotPosition.position, transform.rotation);
                 //Restarting
-                waitShot = Random.Range(1.5f, 2f);
+                waitShot = Random.Range(1.5f, 3f);
             }
         }
     }
