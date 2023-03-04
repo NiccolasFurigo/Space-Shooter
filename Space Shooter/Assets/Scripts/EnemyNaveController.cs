@@ -50,7 +50,6 @@ public class EnemyNaveController : EnemyEntity
                 {
                     //Creating the shot that follow
                     var myShot = Instantiate(shot, shotPosition.position, transform.rotation);
-
                     Vector2 direction = player.transform.position - myShot.transform.position;
                     direction.Normalize();
                     myShot.GetComponent<Rigidbody2D>().velocity = direction * (-shotSpeed);

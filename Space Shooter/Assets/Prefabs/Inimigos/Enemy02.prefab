@@ -145,9 +145,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5464725725214869626}
+  - component: {fileID: 5464725725214869621}
   - component: {fileID: 5464725725214869623}
   - component: {fileID: 5464725725214869620}
-  - component: {fileID: 5464725725214869621}
   m_Layer: 8
   m_Name: Enemy02
   m_TagString: Enemy
@@ -172,6 +172,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5464725725214869621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5464725725214869627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c043439c69c422d488ee50a03f1c9c66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: -1
+  life: 1
+  shotSpeed: -3
+  waitShot: 4
+  shot: {fileID: 621178163139044677, guid: 145222856bb8d2f42ba5cb3da1193774, type: 3}
+  explosion: {fileID: 3904259217435772301, guid: 1d825c8a221802c4389e6931c82c8f5f, type: 3}
+  points: 25
+  shotPosition: {fileID: 6223180819274126233}
 --- !u!50 &5464725725214869623
 Rigidbody2D:
   serializedVersion: 4
@@ -209,20 +229,3 @@ CapsuleCollider2D:
   m_Offset: {x: -0.012038708, y: -0.2257266}
   m_Size: {x: 0.6565038, y: 0.8615544}
   m_Direction: 0
---- !u!114 &5464725725214869621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5464725725214869627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c043439c69c422d488ee50a03f1c9c66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: -3
-  life: 1
-  shot: {fileID: 621178163139044677, guid: 145222856bb8d2f42ba5cb3da1193774, type: 3}
-  explosion: {fileID: 3904259217435772301, guid: 1d825c8a221802c4389e6931c82c8f5f, type: 3}
-  shotPosition: {fileID: 6223180819274126233}

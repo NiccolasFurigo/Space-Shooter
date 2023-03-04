@@ -6,10 +6,11 @@ public class EnemyEntity : MonoBehaviour
 {
     [SerializeField] protected float velocity;
     [SerializeField] protected int life;
-    protected float shotSpeed = -5f;
-    protected float waitShot = 1f;
+    [SerializeField] protected float shotSpeed = -5f;
+    [SerializeField] protected float waitShot = 1f;
     [SerializeField] protected GameObject shot;
     [SerializeField] protected GameObject explosion;
+    [SerializeField] protected int points = 10;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +25,19 @@ public class EnemyEntity : MonoBehaviour
 
     public void loseLife(int damage)
     {
-        life -= damage;
-        if(life <= 0)
+        if (transform.position.y < 5f)
         {
-            Destroy(gameObject);
-            Instantiate(explosion, transform.position, transform.rotation);
+            life -= damage;
+            if (life <= 0)
+            {
+                Destroy(gameObject);
+                Instantiate(explosion, transform.position, transform.rotation);
+
+                var generator = FindObjectOfType<GameController>();
+                generator.DecreaseAmout();
+                generator.EarnPoints(points);
+
+            }
         }
     }
     //Destroying when exiting the screen
@@ -37,6 +46,8 @@ public class EnemyEntity : MonoBehaviour
         if (other.CompareTag("Destroyer"))
         {
             Destroy(gameObject);
+            var generator = FindObjectOfType<GameController>();
+            generator.DecreaseAmout();
         }
     }
     //Destroying when touching the player
@@ -45,6 +56,8 @@ public class EnemyEntity : MonoBehaviour
         if (other.gameObject.CompareTag("Player01"))
         {
             Destroy(gameObject);
+            var generator = FindObjectOfType<GameController>();
+            generator.DecreaseAmout();
             Instantiate(explosion, transform.position, transform.rotation);
             other.gameObject.GetComponent<PlayerController>().loseLife(1);
         }

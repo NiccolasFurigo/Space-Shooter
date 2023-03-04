@@ -145,8 +145,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8934646553755620794}
-  - component: {fileID: 8934646553755620789}
   - component: {fileID: 8934646553755620788}
+  - component: {fileID: 8934646553755620789}
   - component: {fileID: 1698462617}
   m_Layer: 8
   m_Name: InimigoPolvo
@@ -172,6 +172,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8934646553755620788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8934646553755620791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c0f301a1730a3a4a988a8ca32e813bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: -3
+  life: 1
+  shotSpeed: -4
+  waitShot: 2
+  shot: {fileID: 7788329280449908652, guid: fb841a792b2e46e44ad69a7d3c577c1a, type: 3}
+  explosion: {fileID: 3904259217435772301, guid: 1d825c8a221802c4389e6931c82c8f5f, type: 3}
+  points: 10
+  shotPosition: {fileID: 7713814071815146512}
 --- !u!50 &8934646553755620789
 Rigidbody2D:
   serializedVersion: 4
@@ -193,23 +213,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8934646553755620788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8934646553755620791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c0f301a1730a3a4a988a8ca32e813bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocity: -3
-  life: 1
-  shot: {fileID: 7788329280449908652, guid: fb841a792b2e46e44ad69a7d3c577c1a, type: 3}
-  explosion: {fileID: 3904259217435772301, guid: 1d825c8a221802c4389e6931c82c8f5f, type: 3}
-  shotPosition: {fileID: 7713814071815146512}
 --- !u!70 &1698462617
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
