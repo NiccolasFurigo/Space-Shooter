@@ -6,7 +6,6 @@ public class InimigoController : EnemyEntity
 {
     //Variables
     private Rigidbody2D myRB;
-    private float shotSpeed = -5f;
     [SerializeField] private Transform shotPosition;
     
     // Start is called before the first frame update

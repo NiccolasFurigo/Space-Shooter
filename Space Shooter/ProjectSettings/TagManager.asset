@@ -8,6 +8,7 @@ TagManager:
   - player01
   - Player01
   - Enemy
+  - Destroyer
   layers:
   - Default
   - TransparentFX
