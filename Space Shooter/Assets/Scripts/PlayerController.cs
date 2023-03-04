@@ -10,10 +10,12 @@ public class PlayerController : MonoBehaviour
     private int life = 3;
     private float shotSpeed = 10f;
     [SerializeField] private GameObject shot;
+    [SerializeField] private GameObject shot2;
     [SerializeField] private GameObject explosion;
     [SerializeField] private Transform shotPosition;
     [SerializeField] private float xLimit;
     [SerializeField] private float yLimit;
+    [SerializeField] private int shotLevel = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,10 +52,23 @@ public class PlayerController : MonoBehaviour
         //Shooting
         if (Input.GetButtonDown("Fire1"))
         {
-            var myShot = Instantiate(shot, shotPosition.position, transform.rotation);
-            myShot.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, shotSpeed);
+            switch (shotLevel) {
+                case 1:
+                    CreatingShot(shot);
+                    break;
+                case 2:
+                    CreatingShot(shot2);
+                    break;
+            }
         }
     }
+
+    private void CreatingShot(GameObject shot)
+    {
+        GameObject myShot = Instantiate(shot, shotPosition.position, transform.rotation);
+        myShot.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, shotSpeed);
+    }
+
 
     public void loseLife(int damage)
     {

@@ -80,10 +80,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shot: {fileID: 3057474372636974245, guid: 3205d72187b25f34dbfea70a0a4dda35, type: 3}
+  shot2: {fileID: 5988069843227473165, guid: ea575b3f657dd67469d9aa3ca127be9c, type: 3}
   explosion: {fileID: 3904259217435772301, guid: 1d825c8a221802c4389e6931c82c8f5f, type: 3}
   shotPosition: {fileID: 1771203651}
   xLimit: 8.3
   yLimit: 4.4
+  shotLevel: 1
 --- !u!50 &6513093005676139894
 Rigidbody2D:
   serializedVersion: 4
