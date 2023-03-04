@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject shot;
     [SerializeField] private GameObject explosion;
     [SerializeField] private Transform shotPosition;
+    [SerializeField] private float xLimit;
+    [SerializeField] private float yLimit;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,11 @@ public class PlayerController : MonoBehaviour
         myVelocity.Normalize();
         //Passing the input to Rigidbody
         myRB.velocity = myVelocity * velocity;
+
+        //Limiting the player on the screen
+        float myX = Mathf.Clamp(transform.position.x, -xLimit, xLimit);
+        float myY = Mathf.Clamp(transform.position.y, -yLimit, yLimit);
+        transform.position = new Vector3(myX, myY, transform.position.z);
     }
 
     private void Shooting()
