@@ -9,6 +9,7 @@ TagManager:
   - Player01
   - Enemy
   - Destroyer
+  - PowerUp
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - Player
   - TiroPlayer
   - TiroInimigo
-  - 
+  - PowerUp
   - 
   - 
   - 

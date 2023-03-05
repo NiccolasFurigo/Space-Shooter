@@ -27,7 +27,9 @@ public class TiroController : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            collision.GetComponent<EnemyEntity>().loseLife(1);
+            var enemy = collision.GetComponent<EnemyEntity>();
+            enemy.loseLife(1);
+            enemy.DropItem();
         }
 
         if (collision.CompareTag("Player01"))

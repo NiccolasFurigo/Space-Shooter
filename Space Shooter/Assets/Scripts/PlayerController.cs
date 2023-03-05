@@ -54,18 +54,29 @@ public class PlayerController : MonoBehaviour
         {
             switch (shotLevel) {
                 case 1:
-                    CreatingShot(shot);
+                    CreatingShot(shot, shotPosition.position);
                     break;
                 case 2:
-                    CreatingShot(shot2);
+                    Shot2();
+                    break;
+                case 3:
+                    CreatingShot(shot, shotPosition.position);
+                    Shot2();
                     break;
             }
         }
     }
 
-    private void CreatingShot(GameObject shot)
+    private void Shot2() {
+        Vector3 position = new Vector3(transform.position.x - 0.45f, transform.position.y + 0.1f, 0f);
+        CreatingShot(shot2, position);
+        position = new Vector3(transform.position.x + 0.45f, transform.position.y + 0.1f, 0f);
+        CreatingShot(shot2, position);
+    }
+
+    private void CreatingShot(GameObject shot, Vector3 position)
     {
-        GameObject myShot = Instantiate(shot, shotPosition.position, transform.rotation);
+        GameObject myShot = Instantiate(shot, position, transform.rotation);
         myShot.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, shotSpeed);
     }
 
@@ -77,6 +88,18 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(gameObject);
             Instantiate(explosion, transform.position, transform.rotation);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("PowerUp"))
+        {
+            if (shotLevel < 3)
+            {
+                shotLevel++;
+                Destroy(other.gameObject);
+            }
         }
     }
 }

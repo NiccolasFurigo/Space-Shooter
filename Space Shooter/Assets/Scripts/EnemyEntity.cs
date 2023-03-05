@@ -11,6 +11,8 @@ public class EnemyEntity : MonoBehaviour
     [SerializeField] protected GameObject shot;
     [SerializeField] protected GameObject explosion;
     [SerializeField] protected int points = 10;
+    [SerializeField] protected GameObject powerUp;
+    [SerializeField] protected float itemRate = 0.9f;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +52,22 @@ public class EnemyEntity : MonoBehaviour
             generator.DecreaseAmout();
         }
     }
+
+    public void DropItem()
+    {
+        float chance = Random.Range(0f, 1f);
+
+        if (chance > itemRate)
+        {
+            //Creating PowerUp
+            GameObject pU = Instantiate(powerUp, transform.position, transform.rotation);
+            Destroy(pU, 3f);
+            Vector2 dir = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+            pU.GetComponent<Rigidbody2D>().velocity = dir;
+        }
+
+    }
+
     //Destroying when touching the player
     private void OnCollisionEnter2D(Collision2D other)
     {
