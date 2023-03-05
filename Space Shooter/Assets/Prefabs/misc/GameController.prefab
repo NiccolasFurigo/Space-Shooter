@@ -47,5 +47,7 @@ MonoBehaviour:
   enemies:
   - {fileID: 8934646553755620791, guid: dfcc99990f4a44649aba4bed2d350691, type: 3}
   - {fileID: 5464725725214869627, guid: fe63c383e348f8541a98860056dbb5bd, type: 3}
+  BossStart: {fileID: 7474134609292924546, guid: 6498dc7812db05543b274572a4b92d46, type: 3}
   level: 1
   waitTime: 5
+  amoutEnemy: 0

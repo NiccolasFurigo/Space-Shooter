@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8835961214111357810, guid: e6f42477b7b92a44486e3f9096800314, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.44
+      value: -9.65
       objectReference: {fileID: 0}
     - target: {fileID: 8835961214111357810, guid: e6f42477b7b92a44486e3f9096800314, type: 3}
       propertyPath: m_LocalPosition.z
@@ -488,6 +488,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8551444389796144152, guid: b7e96e896be4f824f804e65af8233d07, type: 3}
+      propertyPath: BossStart
+      value: 
+      objectReference: {fileID: 7474134609292924546, guid: 6498dc7812db05543b274572a4b92d46, type: 3}
     - target: {fileID: 8551444389796144153, guid: b7e96e896be4f824f804e65af8233d07, type: 3}
       propertyPath: m_Name
       value: GameController

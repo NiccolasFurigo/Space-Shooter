@@ -6,10 +6,12 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemies;
-    private int point = 0;
+    [SerializeField] private int point = 0;
     private int levelBase = 100;
-    [SerializeField] private int level = 1;
     private float waitEnemy = 0f;
+    private bool animetionBoss = false;
+    [SerializeField] private GameObject BossStart;
+    [SerializeField] private int level = 1;
     [SerializeField] private float waitTime = 5f;
     [SerializeField] private int amoutEnemy = 0;
     // Start is called before the first frame update
@@ -21,7 +23,13 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       GenerateEnemy();
+        if (level < 5)
+        {
+            GenerateEnemy();
+        } else
+        {
+            CreatingBoss();
+        }
     }
 
     public void EarnPoints(int point)
@@ -30,6 +38,20 @@ public class GameController : MonoBehaviour
         if(this.point > levelBase * level)
         {
             level++;
+        }
+    }
+
+    private void CreatingBoss()
+    {
+        if (amoutEnemy <= 0 && waitTime > 0)
+        {
+            waitTime -= Time.deltaTime;
+            if (!animetionBoss && waitTime <= 0)
+            {
+                GameObject animBoss = Instantiate(BossStart, Vector3.zero, transform.rotation);
+                Destroy(animBoss, 5f);
+                animetionBoss = true;
+            }
         }
     }
 

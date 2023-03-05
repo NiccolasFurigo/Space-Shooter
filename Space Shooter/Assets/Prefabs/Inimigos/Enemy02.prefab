@@ -187,7 +187,7 @@ MonoBehaviour:
   velocity: -3
   life: 2
   shotSpeed: -3
-  waitShot: 4
+  waitShot: 1
   shot: {fileID: 621178163139044677, guid: 145222856bb8d2f42ba5cb3da1193774, type: 3}
   explosion: {fileID: 3904259217435772301, guid: 1d825c8a221802c4389e6931c82c8f5f, type: 3}
   points: 25
