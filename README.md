@@ -7,7 +7,7 @@ The game is based on points and level, as the player kills enemies he earns poin
 <h3> Player</h3>
 <p align="justify"> The player can move in eight directions. Throughout the game the player will be able to find some powerup to agian some modifications, which could be:</p>
 <ul>
-  <li>A different type of shot (being 5 types);</li>
+  <li>A different type of shot (being 3 types);</li>
   <li>Increase your movement speed;</li>
   <li>Increase fire rate.</li>
 </ul>
