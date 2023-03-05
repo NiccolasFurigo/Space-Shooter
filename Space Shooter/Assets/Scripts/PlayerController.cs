@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -9,6 +10,10 @@ public class PlayerController : MonoBehaviour
     private float velocity = 5f;
     private int life = 3;
     private float shotSpeed = 10f;
+    private GameObject myShield;
+    private float shieldTimer = 0f;
+    private int amountShiled = 3;
+    [SerializeField] private GameObject shield;
     [SerializeField] private GameObject shot;
     [SerializeField] private GameObject shot2;
     [SerializeField] private GameObject explosion;
@@ -28,6 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         Shooting();
+        Shield();
     }
 
     private void Move()
@@ -45,6 +51,29 @@ public class PlayerController : MonoBehaviour
         float myX = Mathf.Clamp(transform.position.x, -xLimit, xLimit);
         float myY = Mathf.Clamp(transform.position.y, -yLimit, yLimit);
         transform.position = new Vector3(myX, myY, transform.position.z);
+    }
+
+    private void Shield()
+    {
+        if (Input.GetButtonDown("Shield"))
+        {
+            if (!myShield && amountShiled > 0)
+            {
+                myShield = Instantiate(shield, transform.position, transform.rotation);
+                amountShiled--;
+            }
+        }
+
+        if (myShield) {
+            shieldTimer += Time.deltaTime;
+            myShield.transform.position = transform.position;
+
+            if(shieldTimer > 6f)
+            {
+                Destroy(myShield);
+                shieldTimer = 0f;
+            }
+        }
     }
 
     private void Shooting()

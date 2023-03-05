@@ -37,6 +37,7 @@ public class EnemyEntity : MonoBehaviour
 
                 var generator = FindObjectOfType<GameController>();
                 generator.EarnPoints(points);
+                DropItem();
 
             }
         }
@@ -47,6 +48,7 @@ public class EnemyEntity : MonoBehaviour
         if (other.CompareTag("Destroyer"))
         {
             Destroy(gameObject);
+            Instantiate(explosion, transform.position, transform.rotation);
         }
     }
 
