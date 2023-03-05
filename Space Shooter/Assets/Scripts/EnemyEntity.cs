@@ -36,7 +36,6 @@ public class EnemyEntity : MonoBehaviour
                 Instantiate(explosion, transform.position, transform.rotation);
 
                 var generator = FindObjectOfType<GameController>();
-                generator.DecreaseAmout();
                 generator.EarnPoints(points);
 
             }
@@ -48,7 +47,14 @@ public class EnemyEntity : MonoBehaviour
         if (other.CompareTag("Destroyer"))
         {
             Destroy(gameObject);
-            var generator = FindObjectOfType<GameController>();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        var generator = FindObjectOfType<GameController>();
+        if (generator)
+        {
             generator.DecreaseAmout();
         }
     }
@@ -74,8 +80,6 @@ public class EnemyEntity : MonoBehaviour
         if (other.gameObject.CompareTag("Player01"))
         {
             Destroy(gameObject);
-            var generator = FindObjectOfType<GameController>();
-            generator.DecreaseAmout();
             Instantiate(explosion, transform.position, transform.rotation);
             other.gameObject.GetComponent<PlayerController>().loseLife(1);
         }

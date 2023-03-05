@@ -38,7 +38,20 @@ public class GameController : MonoBehaviour
         amoutEnemy--;
     }
 
-    void GenerateEnemy()
+    private bool PositionCheck(Vector3 position, Vector3 size)
+    {
+        Collider2D hit = Physics2D.OverlapBox(position, size, 0f);
+        if(hit != null)
+        {
+            return true;
+        }
+        else 
+        { 
+            return false; 
+        }
+    }
+
+    private void GenerateEnemy()
     {
         if(waitEnemy > 0)
         {
@@ -49,8 +62,15 @@ public class GameController : MonoBehaviour
         {
             // Created Waves
             int amout = level * 4;
+            int attempt = 0;
             while(amoutEnemy < amout)
             {
+                attempt++;
+                if(attempt > 200)
+                {
+                    break;
+                }
+
                 //Creating enemies based on level
                 GameObject enemyCreated;
                 float chance = Random.Range(0f, level);
@@ -64,6 +84,8 @@ public class GameController : MonoBehaviour
                 }
 
                 Vector3 position = new Vector3(Random.Range(-8f, 8f), Random.Range(6f, 15f), 0f);
+                bool collision = PositionCheck(position, enemyCreated.transform.localScale);
+                if (collision) { continue; }
                 Instantiate(enemyCreated, position, transform.rotation);
                 amoutEnemy++;
                 waitEnemy = waitTime;

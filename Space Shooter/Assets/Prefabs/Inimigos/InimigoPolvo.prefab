@@ -185,14 +185,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: -3
-  life: 1
+  life: 2
   shotSpeed: -4
   waitShot: 2
   shot: {fileID: 7788329280449908652, guid: fb841a792b2e46e44ad69a7d3c577c1a, type: 3}
   explosion: {fileID: 3904259217435772301, guid: 1d825c8a221802c4389e6931c82c8f5f, type: 3}
   points: 10
   powerUp: {fileID: 8373104264164353979, guid: 09dfe8577e707e94eb237cd96f720d2f, type: 3}
-  itemRate: 0.9
+  itemRate: 0.99
   shotPosition: {fileID: 7713814071815146512}
 --- !u!50 &8934646553755620789
 Rigidbody2D:
