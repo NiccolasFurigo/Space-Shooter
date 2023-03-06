@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class BossController : EnemyEntity
 {
-    [SerializeField] private Rigidbody2D myRB;
+    //Variables
+    private Rigidbody2D myRB;
+    private bool positionPermission = true;
+    private float shotDelay = 1f;
+    private float waitShot2 = 1f;
     [SerializeField] private float horizontalLimit = 6f;
     [SerializeField] private float speed = 2f;
-    [SerializeField] private string state = "state1";
     [SerializeField] private Transform shotPosition1;
     [SerializeField] private Transform shotPosition2;
     [SerializeField] private Transform shotPosition3;
     [SerializeField] private GameObject shot1;
     [SerializeField] private GameObject shot2;
-    [SerializeField] private bool positionPermission = true;
-    [SerializeField] private float shotDelay = 1f;
-    [SerializeField] private float waitShot2 = 1f;
+    //Variables States
+    private string state = "state1";
+    [SerializeField] private string[] states;
+    [SerializeField] private float waitStates = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +29,8 @@ public class BossController : EnemyEntity
     // Update is called once per frame
     void Update()
     {
+        //State Machine
+        ChangeState();
         switch (state)
         {
             case "state1":
@@ -41,6 +47,7 @@ public class BossController : EnemyEntity
 
     private void State1()
     {
+        //Limiting the boss on the screen
         if ((transform.position.x >= horizontalLimit || transform.position.x <= -horizontalLimit) && positionPermission)
         {
             speed *= -1;
@@ -50,7 +57,7 @@ public class BossController : EnemyEntity
             positionPermission = true;
         }
         myRB.velocity = new Vector2(speed, 0f);
-
+        //Shooting
         if (waitShot <= 0f)
         {
             Shot1();
@@ -64,6 +71,7 @@ public class BossController : EnemyEntity
 
     private void State2() 
     {
+        myRB.velocity = Vector2.zero;
         if (waitShot <= 0f)
         {
             Shot2();
@@ -76,6 +84,7 @@ public class BossController : EnemyEntity
 
     private void State3() 
     {
+        myRB.velocity = Vector2.zero;
         if (waitShot <= 0f)
         {
             Shot1();
@@ -98,6 +107,7 @@ public class BossController : EnemyEntity
 
     private void Shot1()
     {
+        //Creating the shot
         GameObject shot = Instantiate(shot1, shotPosition1.position, transform.rotation);
         shot.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, shotSpeed);
         shot = Instantiate(shot1, shotPosition2.position, transform.rotation);
@@ -118,6 +128,20 @@ public class BossController : EnemyEntity
             //Adjusting the angle
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             myShot.transform.rotation = Quaternion.Euler(0f, 0f, (angle + 90));
+        }
+    }
+
+    private void ChangeState()
+    {
+        //Locking between states
+        if(waitStates <= 0f)
+        {
+            int indiceState = Random.Range(0, states.Length);
+            state = states[indiceState];
+            waitStates = 7f;
+        } else
+        {
+            waitStates -= Time.deltaTime;
         }
     }
 }
