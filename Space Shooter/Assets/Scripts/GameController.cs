@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private int level = 1;
     [SerializeField] private float waitTime = 5f;
     [SerializeField] private int amoutEnemy = 0;
+    [SerializeField] private Text pointText;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,7 @@ public class GameController : MonoBehaviour
     public void EarnPoints(int point)
     {
         this.point += point;
+        pointText.text = this.point.ToString();
         if(this.point > levelBase * level)
         {
             level++;

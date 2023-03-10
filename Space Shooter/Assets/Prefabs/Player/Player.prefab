@@ -87,6 +87,8 @@ MonoBehaviour:
   xLimit: 8.3
   yLimit: 4.4
   shotLevel: 1
+  textLife: {fileID: 0}
+  textShield: {fileID: 0}
 --- !u!50 &6513093005676139894
 Rigidbody2D:
   serializedVersion: 4

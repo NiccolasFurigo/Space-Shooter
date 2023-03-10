@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,11 +22,17 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float xLimit;
     [SerializeField] private float yLimit;
     [SerializeField] private int shotLevel = 1;
+    [SerializeField] private Text textLife;
+    [SerializeField] private Text textShield;
     // Start is called before the first frame update
     void Start()
     {
         //Catching the rigidbody
         myRB = GetComponent<Rigidbody2D>();
+
+        textLife.text = life.ToString();
+        textShield.text = amountShiled.ToString();
+
     }
 
     // Update is called once per frame
@@ -61,6 +68,7 @@ public class PlayerController : MonoBehaviour
             {
                 myShield = Instantiate(shield, transform.position, transform.rotation);
                 amountShiled--;
+                textShield.text = amountShiled.ToString();
             }
         }
 
@@ -113,7 +121,10 @@ public class PlayerController : MonoBehaviour
     public void loseLife(int damage)
     {
         life -= damage;
-        if(life <= 0)
+
+        textLife.text = life.ToString();
+
+        if (life <= 0)
         {
             Destroy(gameObject);
             Instantiate(explosion, transform.position, transform.rotation);
