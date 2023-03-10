@@ -36,8 +36,14 @@ public class EnemyEntity : MonoBehaviour
                 Instantiate(explosion, transform.position, transform.rotation);
 
                 var generator = FindObjectOfType<GameController>();
-                generator.EarnPoints(points);
-                DropItem();
+                if (generator)
+                {
+                    generator.EarnPoints(points);
+                }
+                if (powerUp)
+                {
+                    DropItem();
+                }
 
             }
         }

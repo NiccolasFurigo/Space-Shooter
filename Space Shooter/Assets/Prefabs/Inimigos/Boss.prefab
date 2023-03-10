@@ -197,12 +197,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 0
-  life: 10
+  life: 2
   shotSpeed: -5
   waitShot: 1
   shot: {fileID: 0}
-  explosion: {fileID: 0}
-  points: 10
+  explosion: {fileID: 7533573129631127026, guid: e5de7db994620bc4bb5f40de898791dd, type: 3}
+  points: 200
   powerUp: {fileID: 0}
   itemRate: 0.9
   horizontalLimit: 6

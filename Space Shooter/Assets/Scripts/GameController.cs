@@ -49,7 +49,6 @@ public class GameController : MonoBehaviour
             if (!animetionBoss && waitTime <= 0)
             {
                 GameObject animBoss = Instantiate(BossStart, Vector3.zero, transform.rotation);
-                Destroy(animBoss, 5f);
                 animetionBoss = true;
             }
         }
